@@ -10,18 +10,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.deepPurple[200],
-        body: Center(
-          child: Container(
-            height: 300,
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.deepPurple,
+        backgroundColor: const Color.fromARGB(255, 243, 241, 245),
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 350,
+              color: Colors.deepPurple[500],
             ),
-            padding: EdgeInsets.all(25),
-            child: Text("kawa sky"),
-          ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.deepPurple[400],
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.deepPurple[100],
+              ),
+            ),
+          ],
         ),
       ),
     );
