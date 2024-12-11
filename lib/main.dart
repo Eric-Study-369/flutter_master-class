@@ -1,4 +1,10 @@
+// ignore_for_file: prefer_const_constructors, equal_keys_in_map
+
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/page/first_page.dart';
+import 'package:flutter_tutorial/page/home_page.dart';
+import 'package:flutter_tutorial/page/second_page.dart';
+import 'package:flutter_tutorial/page/setting_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,30 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 243, 241, 245),
-        body: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 350,
-              color: Colors.deepPurple[500],
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: Colors.deepPurple[400],
-              ),
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: Colors.deepPurple[100],
-              ),
-            ),
-          ],
-        ),
-      ),
+      home: Firstpage(),
+      routes: {
+        '/firstpage': (context) => Firstpage(),
+        '/secondpage': (context) => Secondtpage(),
+        '/homepage': (context) => homepage(),
+        '/settingpage': (context) => Settingpage(),
+      },
     );
   }
 }
