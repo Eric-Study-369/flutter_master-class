@@ -1,10 +1,5 @@
-// ignore_for_file: prefer_const_constructors, equal_keys_in_map
-
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/page/first_page.dart';
-import 'package:flutter_tutorial/page/home_page.dart';
-import 'package:flutter_tutorial/page/second_page.dart';
-import 'package:flutter_tutorial/page/setting_page.dart';
+import 'package:flutter_tutorial/page/counter_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,14 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Firstpage(),
-      routes: {
-        '/firstpage': (context) => Firstpage(),
-        '/secondpage': (context) => Secondtpage(),
-        '/homepage': (context) => homepage(),
-        '/settingpage': (context) => Settingpage(),
-      },
+      home: CounterPage(),
     );
   }
 }
