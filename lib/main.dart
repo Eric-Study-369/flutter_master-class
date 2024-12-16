@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/page/counter_page.dart';
+// ignore_for_file: prefer_const_constructors
 
-void main() {
-  runApp(MyApp());
-}
+import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/user_input/todo_page.dart';
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CounterPage(),
+      debugShowCheckedModeBanner: false,
+      // home: CounterPage(),
+
+      home: TodoPage(),
     );
   }
 }
