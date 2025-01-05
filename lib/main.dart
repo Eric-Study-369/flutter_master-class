@@ -1,14 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/todo_app/home_app.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_tutorial/ecommer_app/models/card.dart';
+import 'package:flutter_tutorial/ecommer_app/page/intro_page.dart';
+import 'package:provider/provider.dart';
 
-void main() async {
-  await Hive.initFlutter();
-
-  var box = await Hive.openBox('mybox');
-
+void main() {
   runApp(const MyApp());
 }
 
@@ -17,14 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // home: CounterPage(),
-
-      // home: TodoPage(),
-
-      home: HomeApp(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => const MaterialApp(
+        home: IntroPage(),
+      ),
     );
   }
 }
