@@ -1,4 +1,5 @@
 {
     "files.autoSave": "off",
-    "dart.hotReloadOnSave": "never"
+    "dart.hotReloadOnSave": "never",
+    "java.compile.nullAnalysis.mode": "disabled"
 }

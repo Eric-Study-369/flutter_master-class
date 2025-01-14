@@ -20,7 +20,7 @@ class CardPage extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    //pop dialog box
+                    //pop dialog boxcl
                     Navigator.pop(context);
 
                     //add to card
