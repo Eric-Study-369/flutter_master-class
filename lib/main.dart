@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/ecommerce_app/models/shop.dart';
-import 'package:flutter_tutorial/ecommerce_app/page/card_page.dart';
-import 'package:flutter_tutorial/ecommerce_app/page/intro_page.dart';
-import 'package:flutter_tutorial/ecommerce_app/page/shop_page.dart';
-import 'package:flutter_tutorial/ecommerce_app/thmes/light_mode.dart';
+import 'package:flutter_tutorial/models/note_database.dart';
+import 'package:flutter_tutorial/page/note_page.dart';
+import 'package:flutter_tutorial/them/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NoteDatabase.initialize();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => Shop(),
+    MultiProvider(
+      providers: [
+        // Note provider
+        ChangeNotifierProvider(create: (context) => NoteDatabase()),
+
+        //theme provider
+        ChangeNotifierProvider(create: (context) => ThemProvider())
+      ],
       child: const MyApp(),
     ),
   );
@@ -17,18 +23,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Intropage(),
-      theme: lightMode,
-      routes: {
-        '/intro_page': (context) => const Intropage(),
-        '/shop_page': (context) => const ShopPage(),
-        '/card_page': (context) => const CardPage(),
-      },
+      home: const Notespage(),
+      theme: Provider.of<ThemProvider>(context).themeData,
     );
   }
 }
