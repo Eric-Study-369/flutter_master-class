@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/components/my_drawer.dart';
 import 'package:flutter_tutorial/components/my_habit_tile.dart';
-import 'package:flutter_tutorial/components/my_heaat_map.dart';
+import 'package:flutter_tutorial/components/my_heat_map.dart';
 import 'package:flutter_tutorial/database/habit_database.dart';
 import 'package:flutter_tutorial/module/habit.dart';
 import 'package:flutter_tutorial/util/habit_utile.dart';
@@ -142,6 +142,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,

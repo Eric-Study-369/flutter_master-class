@@ -17,6 +17,7 @@ class MyHeatMap extends StatelessWidget {
       defaultColor: Theme.of(context).colorScheme.secondary,
       textColor: Colors.white,
       showColorTip: false,
+      showText: true,
       scrollable: true,
       size: 30,
       colorsets: {
