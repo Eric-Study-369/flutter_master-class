@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "546616686280",
+    "project_id": "aututorial-19015",
+    "storage_bucket": "aututorial-19015.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546616686280:android:7b696b10400513765f17fd",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tutorial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5OMC1vQRVDMKua0aHKHBlUV8EddALTd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
