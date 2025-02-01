@@ -1,6 +1,10 @@
 # flutter_tutorial
 
 A new Flutter project.
+</br>
+<img src="habit1.jpg" width="200">
+<img src="habit2.jpg" width="200">
+<img src="habit3.jpg" width="200"> 
 
 ## Getting Started
 
