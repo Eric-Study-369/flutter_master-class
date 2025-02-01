@@ -2,5 +2,7 @@
 
 **Habit Tacker** System
 </br>
-<img src="habit_01.png" width="200"> <img src="habit_02.png" width="200">
-<img src="flutter_04.png" width="200"> <img src="flutter_03.png" width="200"> 
+<img src="habit_01.jpg" width="200"> 
+<img src="habit_02.jpg" width="200">
+<img src="habit_04.jpg" width="200"> 
+<img src="habit_03.jpg" width="200"> 
