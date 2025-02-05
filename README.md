@@ -5,22 +5,29 @@ A Flutter app with Firebase Authentication that allows users to sign in using Go
 ## 🚀 Features
 
  **Google Sign-In Authentication**  
+
 <img src="google_signin.jpg" width="300" alt="Google Sign-In">
 
- **Firebase Email/Password Authentication**  
+ **Firebase Email/Password Authentication**
+
 <img src="firebase_email.jpg" width="300" alt="Firebase Authentication">
 
- **User Registration (Sign-Up)**   
+ **User Registration (Sign-Up)**  
+
 <img src="user_register.jpg" width="300" alt="User Registration">
 
- **Secure Firebase Authentication**  
+ **Secure Firebase Authentication**
+
 <img src="firebase_secure.jpg" width="300" alt="Secure Firebase Authentication">
 
  **Responsive UI login**  
-<img src="ui_01.jpg" width="300" alt="Responsive UI">
 
- **Responsive UI Register**  
 <img src="ui_02.jpg" width="300" alt="Responsive UI">
 
- **Responsive UI home page whit button logout**  
+ **Responsive UI Register** 
+
+<img src="ui_01.jpg" width="300" alt="Responsive UI">
+
+ **Responsive UI home page with button logout**
+
 <img src="home_page.jpg" width="300" alt="Responsive UI">
