@@ -1,16 +1,26 @@
-# flutter_tutorial
+# Flutter Firebase Authentication
 
-A new Flutter project.
+A Flutter app with Firebase Authentication that allows users to sign in using Google Sign-In and Email/Password authentication. Users can log in, log out, and manage their sessions.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+ **Google Sign-In Authentication**  
+<img src="google_signin.jpg" width="300" alt="Google Sign-In">
 
-A few resources to get you started if this is your first Flutter project:
+ **Firebase Email/Password Authentication**  
+<img src="firebase_email.jpg" width="300" alt="Firebase Authentication">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ **User Registration (Sign-Up)**   
+<img src="user_register.jpg" width="300" alt="User Registration">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ **Secure Firebase Authentication**  
+<img src="firebase_secure.jpg" width="300" alt="Secure Firebase Authentication">
+
+ **Responsive UI login**  
+<img src="ui_01.jpg" width="300" alt="Responsive UI">
+
+ **Responsive UI Register**  
+<img src="ui_02.jpg" width="300" alt="Responsive UI">
+
+ **Responsive UI home page whit button logout**  
+<img src="home_page.jpg" width="300" alt="Responsive UI">
