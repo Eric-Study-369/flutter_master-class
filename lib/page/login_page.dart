@@ -1,184 +1,72 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/components/my_button.dart';
-import 'package:flutter_tutorial/components/my_textfile.dart';
-import 'package:flutter_tutorial/components/square_tile.dart';
-import 'package:flutter_tutorial/services/auth_services.dart';
+import 'package:flutter_tutorial/componet/my_button.dart';
+import 'package:flutter_tutorial/componet/mytext_field.dart';
 
-class LoginPage extends StatefulWidget {
-  final Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+class LoginPage extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordordController = TextEditingController();
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final emailController = TextEditingController();
-
-  final passwordController = TextEditingController();
-
-  void SignUserin() async {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        });
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-      Navigator.pop(context);
-    } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
-      showErrorMessage(e.code);
-    }
-  }
-
-  void showErrorMessage(String message) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            backgroundColor: Colors.deepPurple,
-            title: Text(
-              message,
-              style: const TextStyle(color: Colors.white),
-            ),
-          );
-        });
-  }
-
+  final void Function()? onTap;
+  LoginPage({super.key, required this.onTap});
+  void login() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                const Icon(
-                  Icons.lock,
-                  size: 100,
-                ),
-                const SizedBox(height: 50),
-                Text(
-                  "Welcome back you\'ve been missed",
-                  style: TextStyle(color: Colors.grey[700], fontSize: 16),
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                // textfield
-                MyTextField(
-                  controller: emailController,
-                  hinText: "Email",
-                  obscureText: false,
-                ),
-
-                const SizedBox(height: 10),
-
-                // password field
-                MyTextField(
-                  controller: passwordController,
-                  hinText: "Password",
-                  obscureText: true,
-                ),
-
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Forgot password?",
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 25),
-                MyButton(
-                  text: 'Sign In',
-                  onTap: SignUserin,
-                ),
-
-                const SizedBox(height: 50),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      )),
-                      const Text("Or continue with"),
-                      Expanded(
-                          child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      )),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SquareTile(
-                      onTap: () async {
-                        UserCredential? user =
-                            await AuthServices().signInWithGoogle();
-                        if (user != null) {
-                          print("Signed in as: ${user.user?.displayName}");
-                        } else {
-                          print("Sign-in failed");
-                        }
-                      },
-                      imagePath: 'lib/image/google.png',
-                    ),
-                    SizedBox(width: 10),
-                    SquareTile(onTap: () {}, imagePath: 'lib/image/applee.png'),
-                  ],
-                ),
-
-                const SizedBox(height: 50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "No a member?",
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    GestureDetector(
-                      onTap: widget.onTap,
-                      child: const Text(
-                        "Register Now",
-                        style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                )
-              ],
+      backgroundColor: Theme.of(context).colorScheme.background,
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.message,
+            size: 60,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          const SizedBox(height: 50),
+          Text(
+            "Welcome back, you've been missed!",
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
-        ),
-      ),
+          const SizedBox(height: 25),
+          MyTextField(
+            hinText: "Email",
+            obscureText: false,
+            controller: _emailController,
+          ),
+          const SizedBox(height: 10),
+          MyTextField(
+            hinText: "Password",
+            obscureText: true,
+            controller: _passwordordController,
+          ),
+          const SizedBox(height: 25),
+          MyButton(
+            text: "Login",
+            onTap: login,
+          ),
+          const SizedBox(height: 25),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Not a member? ",
+                style: TextStyle(color: Theme.of(context).colorScheme.primary),
+              ),
+              GestureDetector(
+                onTap: onTap,
+                child: Text(
+                  "Register now",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary),
+                ),
+              ),
+            ],
+          ),
+        ],
+      )),
     );
   }
 }
