@@ -1,17 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/services/auth/auth_services.dart';
 import 'package:flutter_tutorial/componet/my_button.dart';
 import 'package:flutter_tutorial/componet/mytext_field.dart';
 
 class Registerpage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _cormfirmpassController = TextEditingController();
+  final TextEditingController _confirmPassController = TextEditingController();
 
   final void Function()? onTap;
 
   Registerpage({super.key, required this.onTap});
 
-  void Register() {}
+  void register(BuildContext context) async {
+    final _auth = AuthService();
+    if (_passwordController.text == _confirmPassController.text) {
+      try {
+        _auth.sigUpWithEmailPassword(
+          _emailController.text,
+          _passwordController.text,
+        );
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    } else {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text("Password don't match!"),
+              ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +70,13 @@ class Registerpage extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           MyTextField(
-            hinText: "Confirm password",
-            obscureText: true,
-            controller: _cormfirmpassController,
-          ),
+              hinText: "Confirm password",
+              obscureText: true,
+              controller: _confirmPassController),
           const SizedBox(height: 25),
           MyButton(
             text: "Register",
-            onTap: Register,
+            onTap: () => register(context),
           ),
           const SizedBox(height: 25),
           Row(

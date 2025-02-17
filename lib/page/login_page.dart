@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/services/auth/auth_services.dart';
 import 'package:flutter_tutorial/componet/my_button.dart';
 import 'package:flutter_tutorial/componet/mytext_field.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   final void Function()? onTap;
   LoginPage({super.key, required this.onTap});
-  void login() {}
+
+  void login(BuildContext context) async {
+    final authService = AuthService();
+    try {
+      await authService.sigInWithEmailPassword(
+          _emailController.text, _passwordController.text);
+    } catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text(e.toString()),
+              ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +54,12 @@ class LoginPage extends StatelessWidget {
           MyTextField(
             hinText: "Password",
             obscureText: true,
-            controller: _passwordordController,
+            controller: _passwordController,
           ),
           const SizedBox(height: 25),
           MyButton(
             text: "Login",
-            onTap: login,
+            onTap: () => login(context),
           ),
           const SizedBox(height: 25),
           Row(

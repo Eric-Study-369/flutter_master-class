@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "546616686280",
-    "project_id": "aututorial-19015",
-    "storage_bucket": "aututorial-19015.firebasestorage.app"
+    "project_number": "211538429941",
+    "project_id": "chatapp-f4c4b",
+    "storage_bucket": "chatapp-f4c4b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:546616686280:android:7b696b10400513765f17fd",
+        "mobilesdk_app_id": "1:211538429941:android:982b024a99fa3be74bc2bc",
         "android_client_info": {
           "package_name": "com.example.flutter_tutorial"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB5OMC1vQRVDMKua0aHKHBlUV8EddALTd4"
+          "current_key": "AIzaSyBtuwmkhUKWT9QHtiC3g_7w_qBZipRIsls"
         }
       ],
       "services": {
