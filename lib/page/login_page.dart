@@ -1,87 +1,86 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/services/auth/auth_services.dart';
-import 'package:flutter_tutorial/componet/my_button.dart';
-import 'package:flutter_tutorial/componet/mytext_field.dart';
+import 'package:flutter_tutorial/component/buttom.dart';
+import 'package:flutter_tutorial/component/my_textfile.dart';
 
 class LoginPage extends StatelessWidget {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  final void Function()? onTap;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final Function()? onTap;
   LoginPage({super.key, required this.onTap});
 
-  void login(BuildContext context) async {
-    final authService = AuthService();
-    try {
-      await authService.sigInWithEmailPassword(
-          _emailController.text, _passwordController.text);
-    } catch (e) {
-      showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-                title: Text(e.toString()),
-              ));
-    }
-  }
+  Login() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Center(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.message,
-            size: 60,
-            color: Theme.of(context).colorScheme.primary,
-          ),
-          const SizedBox(height: 50),
-          Text(
-            "Welcome back, you've been missed!",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-          const SizedBox(height: 25),
-          MyTextField(
-            hinText: "Email",
-            obscureText: false,
-            controller: _emailController,
-          ),
-          const SizedBox(height: 10),
-          MyTextField(
-            hinText: "Password",
-            obscureText: true,
-            controller: _passwordController,
-          ),
-          const SizedBox(height: 25),
-          MyButton(
-            text: "Login",
-            onTap: () => login(context),
-          ),
-          const SizedBox(height: 25),
-          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Not a member? ",
-                style: TextStyle(color: Theme.of(context).colorScheme.primary),
+              Icon(
+                Icons.person,
+                size: 80,
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
-              GestureDetector(
-                onTap: onTap,
-                child: Text(
-                  "Register now",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.primary),
-                ),
+              const SizedBox(height: 20),
+              const Text(
+                "M I N I M A l",
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(height: 50),
+              MytextField(
+                hinText: "Email",
+                obsureText: false,
+                controller: emailController,
+              ),
+              const SizedBox(height: 10),
+              MytextField(
+                hinText: "password",
+                obsureText: true,
+                controller: passwordController,
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "forgot password?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              MyButtom(
+                text: "Login",
+                onTap: Login,
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  ),
+                  GestureDetector(
+                    onTap: onTap,
+                    child: const Text(
+                      " Register here",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.blue),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      )),
+        ),
+      ),
     );
   }
 }
