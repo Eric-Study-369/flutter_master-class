@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "608293066942",
-    "project_id": "social-media-df14b",
-    "storage_bucket": "social-media-df14b.firebasestorage.app"
+    "project_number": "955220844253",
+    "project_id": "social-media-2c1eb",
+    "storage_bucket": "social-media-2c1eb.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:608293066942:android:39f2d7b45ab3ee010c66ef",
+        "mobilesdk_app_id": "1:955220844253:android:80d3a5497f722c599e8534",
         "android_client_info": {
           "package_name": "com.example.flutter_tutorial"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDZAHjwGe4j2wm4HdY3NleGa2d0ao5m-8s"
+          "current_key": "AIzaSyD5twXbzU_vcBOzjsCXsZME6iGglZMVejQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955220844253:android:eb53eb5ca6787fdb9e8534",
+        "android_client_info": {
+          "package_name": "com.example.widgets_tutorial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5twXbzU_vcBOzjsCXsZME6iGglZMVejQ"
         }
       ],
       "services": {

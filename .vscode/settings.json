@@ -3,5 +3,6 @@
     "dart.hotReloadOnSave": "never",
     "java.compile.nullAnalysis.mode": "disabled",
     "java.project.explorer.showNonJavaResources": false,
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cmake.sourceDirectory": "F:/flutter_tutorial/windows/flutter"
 }
