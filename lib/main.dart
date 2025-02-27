@@ -1,19 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/auth/auth.dart';
-import 'package:flutter_tutorial/auth/login_register.dart';
-import 'package:flutter_tutorial/firebase_options.dart';
-import 'package:flutter_tutorial/page/home_page.dart';
-import 'package:flutter_tutorial/page/profile_page.dart';
-import 'package:flutter_tutorial/page/user_page.dart';
-import 'package:flutter_tutorial/theme/dark_mode.dart';
-import 'package:flutter_tutorial/theme/light_mode.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_tutorial/page/weather_page.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,15 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const AuthPage(),
-      theme: lightMode,
-      darkTheme: darkMode,
-      routes: {
-        '/login_register_page': (context) => const LoginorRegister(),
-        '/home_page': (context) => HomePage(),
-        '/profile_page': (context) => ProfilePage(),
-        '/users_page': (context) => const UserPage(),
-      },
+      home: WeatherPage(),
     );
   }
 }

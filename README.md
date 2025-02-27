@@ -1,21 +1,17 @@
-# 📱 Minimal Chat App
+# 🌤️ Flutter Weather App
 
- A simple real-time chat application built using Flutter and Firebase.
+ A simple Flutter weather app that fetches real-time weather data using the **OpenWeatherMap API** and displays animations based on weather conditions.
 
 
- ## 🚀 Features
-
-- User Authentication (Email & Google Sign-In)
-- Real-time Messaging using Firestore
-- Chat UI with message bubbles
-- User List & Contact Selection
-- Timestamped Messages
-- Timestamped Messages
-- Data Persistence using Firebase
+ ## 📌 Features
+✔️ Get real-time weather data for any city  
+✔️ Fetch user's current location weather  
+✔️ Display weather animations using Lottie  
+✔️ Beautiful UI with Flutter  
 
 ## Screenshots
+<img src="clouds.jpg" width="200"> <img src="sunny.jpg" width="200">
+<img src="rain.jpg" width="200"> 
 
-![Authentication](app_1.png)
 
-![Chat UI](app_2.png)
 
